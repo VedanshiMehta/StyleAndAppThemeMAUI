@@ -1,0 +1,229 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:C8_Exercises"
+             x:Class="C8_Exercises.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="labelGreyText" TargetType="Label">
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand"/>
+                <Setter Property="HorizontalTextAlignment"
+                        Value="Center"/>
+                <Setter Property="VerticalTextAlignment"
+                        Value="Center"/>
+                <Setter Property="TextColor"
+                        Value="DarkGray"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="FontSize"
+                        Value="16"/>
+            </Style>
+            <Style x:Key="labelBlackText" TargetType="Label">
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand"/>
+                <Setter Property="HorizontalTextAlignment"
+                        Value="Center"/>
+                <Setter Property="VerticalTextAlignment"
+                        Value="Center"/>
+                <Setter Property="TextColor"
+                        Value="Black"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="FontSize"
+                        Value="14"/>
+            </Style>
+            <Style x:Key="borderStyle" TargetType="Border">
+                
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand"/>
+                <Setter Property="StrokeShape"
+                        Value="RoundRectangle 15"/>
+                <Setter Property="Padding"
+                        Value="15,20,15,15"/>
+            </Style>
+            <Style x:Key="imageBorderStyle" TargetType="Border">
+
+                <Setter Property="Stroke"
+                        Value="White"/>
+                <Setter Property="BackgroundColor"
+                        Value="White"/>
+                <Setter Property="HeightRequest"
+                        Value="50"/>
+                <Setter Property="WidthRequest"
+                        Value="50"/>
+                <Setter Property="HorizontalOptions"
+                        Value="Start"/>
+                <Setter Property="StrokeShape"
+                        Value="RoundRectangle 15"/>
+                <Setter Property="Padding"
+                        Value="10"/>
+            </Style>
+            <Style x:Key="imageStyle" TargetType="Image">
+                <Setter Property="HorizontalOptions"
+                        Value="Center"/>
+                <Setter Property="VerticalOptions"
+                        Value="Center"/>
+            </Style>
+            <Style x:Key="labelTitleStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions"
+                        Value="StartAndExpand"/>
+                <Setter Property="TextColor"
+                        Value="Black"/>
+                <Setter Property="FontSize"
+                        Value="14"/>
+            </Style>
+            <Style x:Key="labelStepsStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions"
+                        Value="StartAndExpand"/>
+                <Setter Property="TextColor"
+                        Value="Black"/>
+                <Setter Property="FontSize"
+                        Value="16"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+            </Style>
+            <Style x:Key="imageRightArrowStyle" TargetType="Image">
+                <Setter Property="HorizontalOptions"
+                        Value="EndAndExpand"/>
+                <Setter Property="Source"
+                        Value="next"/>
+            </Style>
+            <Style x:Key="labelLeftStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions"
+                        Value="StartAndExpand"/>
+                <Setter Property="TextColor"
+                        Value="Black"/>
+                <Setter Property="FontSize"
+                        Value="16"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="VerticalOptions"
+                        Value="CenterAndExpand"/>
+                <Setter Property="Text"
+                        Value="Left"/>
+            </Style>
+
+            <Style x:Key="labelBigWhiteColorStyle" TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="FontSize"
+                        Value="24"/>
+                
+            </Style>
+            <Style x:Key="labelSmallWhiteColorStyle" TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="FontSize"
+                        Value="14"/>
+            </Style>
+            <Style x:Key="labelSmallBlueColorStyle" TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="#425775"/>
+                <Setter Property="FontSize"
+                        Value="14"/>
+            </Style>
+            <Style x:Key="borderBlackBackgroundStyle" TargetType="Border">
+                <Setter Property="StrokeShape"
+                        Value="RoundRectangle 15"/>
+                <Setter Property="BackgroundColor"
+                        Value="#16222F"/>
+                <Setter Property="Padding"
+                        Value="10"/>
+                <Setter Property="Stroke"
+                        Value="#16222F"/>
+            </Style>
+            <Style x:Key="entrySmallWhiteColorStyle" TargetType="Entry">
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="FontSize"
+                        Value="14"/>
+                <Setter Property="PlaceholderColor"
+                        Value="Gray"/>
+            </Style>
+            <Style x:Key="buttonBlueStyle" TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="#1EA5FB"/>
+                <Setter Property="CornerRadius"
+                        Value="50"/>
+                <Setter Property="Padding"
+                        Value="15"/>
+            </Style>
+            <Style x:Key="imageBotStyle" TargetType="Image">
+                <Setter Property="HeightRequest"
+                        Value="80"/>
+                <Setter Property="WidthRequest"
+                        Value="80"/>
+                <Setter Property="Source"
+                        Value="dotnet_bot"/>
+            </Style>
+            <Style x:Key="labelBigSize" TargetType="Label">
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="FontSize"
+                        Value="24"/>
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding Dark= White, Default= #5F74C3}"/>
+            </Style>
+            <Style x:Key="borderBackgroundStyle" TargetType="Border">
+                <Setter Property="StrokeShape"
+                        Value="RoundRectangle 30"/>
+                <Setter Property="BackgroundColor"
+                        Value="{AppThemeBinding Dark= #16222F ,Light= WhiteSmoke }"/>
+                <Setter Property="Padding"
+                        Value="10,5,10,5"/>
+                <Setter Property="Stroke"
+                        Value="#16222F"/>
+            </Style>
+            <Style x:Key="entrySmallColorStyle" TargetType="Entry">
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding Dark= White, Light= DarkGray}"/>
+                <Setter Property="FontSize"
+                        Value="14"/>
+                <Setter Property="PlaceholderColor"
+                        Value="{AppThemeBinding Dark= White, Light= DarkGray}"/>
+                <Setter Property="Placeholder"
+                        Value="Search Friends"/>
+            </Style>
+            <Style x:Key="labelSmallAppThemeingStyle" TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding Dark=White ,Light= #5F74C3}"/>
+                <Setter Property="FontSize"
+                        Value="14"/>
+            </Style>
+            <Style x:Key="imageBorderUserPhotoStyle" TargetType="Border">
+                
+                <Setter Property="HeightRequest"
+                        Value="80"/>
+                <Setter Property="WidthRequest"
+                        Value="80"/>
+                <Setter Property="StrokeShape"
+                        Value="RoundRectangle 40"/>
+                <Setter Property="Stroke"
+                        Value="{AppThemeBinding Dark = Black, Light= White}"/>
+            </Style>
+            <Style x:Key="labelUserNameStyle" TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding Dark=White, Light= #5F74C3}"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="FontSize"
+                        Value="18"/>
+
+            </Style>
+            <Style x:Key="labelMesageSentStyle" TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding Dark=White, Light= Gray}"/>
+                <Setter Property="FontSize"
+                        Value="14"/>
+
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

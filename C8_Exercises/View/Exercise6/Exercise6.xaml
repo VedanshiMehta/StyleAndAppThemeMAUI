@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C8_Exercises.View.Exercise6.Exercise6"
+             Title="Login">
+    <ContentPage.Resources>
+        <Style x:Key="labelBaseStyle" TargetType="Label">
+            <Setter Property="HorizontalOptions"
+                    Value="StartAndExpand"/>
+        </Style>
+        <Style x:Key="borderBaseStyle" TargetType="Border">
+            <Setter Property="HorizontalOptions"
+                    Value="FillAndExpand"/>
+            <Setter Property="StrokeShape"
+                    Value="RoundRectangle 15"/>
+            <Setter Property="Padding"
+                    Value="10"/>
+        </Style>
+        <Style x:Key="entryStyle" TargetType="Entry">
+            <Setter Property="HorizontalOptions"
+                    Value="FillAndExpand"/>
+
+        </Style>
+        <Style x:Key="blackLabelColorStyle" TargetType="Label"
+                       BasedOn="{StaticResource labelBaseStyle}">
+            <Setter Property="TextColor"
+                            Value="Black"/>
+            <Setter Property="FontSize"
+                            Value="18"/>
+            <Setter Property="FontAttributes"
+                            Value="Bold"/>
+
+        </Style>
+        <Style x:Key="redLabelColorStyle" TargetType="Label">
+            <Setter Property="TextColor"
+                            Value="Red"/>
+            <Setter Property="FontSize"
+                            Value="18"/>
+            <Setter Property="FontAttributes"
+                            Value="Bold"/>
+
+        </Style>
+        <Style x:Key="blackBorderColorStyle" TargetType="Border"
+                       BasedOn="{StaticResource borderBaseStyle}">
+            <Setter Property="Stroke"
+                            Value="Black"/>
+        </Style>
+        <Style x:Key="redBorderColorStyle" TargetType="Border">
+            <Setter Property="Stroke"
+                    Value="Red"/>
+            <Setter Property="HorizontalOptions"
+                    Value="FillAndExpand"/>
+            <Setter Property="StrokeShape"
+                    Value="RoundRectangle 15"/>
+            <Setter Property="Padding"
+                    Value="10"/>
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand"
+                     Padding="10">
+            <Label Text="Username"
+                   x:Name="labelUserName"
+                   Style="{DynamicResource blackLabelColorStyle}"/>
+            <Border Style="{DynamicResource blackBorderColorStyle}"
+                    Margin="0,5,0,0"
+                    x:Name="borderUserName">
+                <Entry Placeholder="Enter Username"
+                       Style="{StaticResource entryStyle}"
+                       x:Name="username"/>
+            </Border>
+            <Label Text="Password"
+                   x:Name="labelPassword"
+                   Style="{DynamicResource blackLabelColorStyle}"
+                   Margin="0,10,0,0"/>
+            <Border Style="{DynamicResource blackBorderColorStyle}"
+                    Margin="0,5,0,0"
+                     x:Name="borderPassword">
+                <Entry Placeholder="Enter Password"
+                       Style="{StaticResource entryStyle}"
+                       IsPassword="True"
+                       x:Name="password"/>
+            </Border>
+            <Button x:Name="login"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Login"
+                    CornerRadius="20"
+                    Padding="15"
+                    Margin="0,20,0,0"
+                    Clicked="Login_Clicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

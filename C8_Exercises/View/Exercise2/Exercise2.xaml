@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C8_Exercises.View.Exercise2.Exercise2"
+             Padding="15">
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     Orientation="Horizontal">
+            <Label Text="Back"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   FontSize="16"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand"/>
+            <Image Source="dots"
+                   HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ScrollView >
+        <StackLayout>
+            <VerticalStackLayout Spacing="-20">
+                <BoxView HeightRequest="100"
+                         WidthRequest="800"
+                         Margin="0,40,0,0"
+                         Color="#AF2341"
+                        Rotation="-10"
+                        TranslationY="40"
+                        HorizontalOptions="FillAndExpand"/>
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand"
+                                       Spacing="-25">
+                    <Border BackgroundColor="#E7E7E7"
+                            Stroke="#E7E7E7"
+                            StrokeShape="RoundRectangle 30"
+                            HeightRequest="100"
+                            WidthRequest="100"
+                            Padding="15">
+                        <Image Source="dotnet_bot"/>
+                    </Border>
+                    <Border BackgroundColor="SkyBlue"
+                            Stroke="SkyBlue"
+                            StrokeShape="RoundRectangle 15"
+                            HeightRequest="40"
+                            WidthRequest="40"
+                            Padding="10"
+                            VerticalOptions="Start">
+                        <Image Source="camera"/>
+                    </Border>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <Grid RowDefinitions="*,*"
+                  ColumnDefinitions="*,*,*"
+                  RowSpacing="10"
+                  Margin="0,20,0,0">
+                <Label Text="Applied"
+                       Style="{StaticResource labelGreyText}"
+                       Grid.Row="0"
+                       Grid.Column="0"/>
+                <Label Text="Reviewed"
+                       Style="{StaticResource labelGreyText}"
+                       Grid.Row="0"
+                       Grid.Column="1"/>
+                <Label Text="Contacted"
+                       Style="{StaticResource labelGreyText}"
+                       Grid.Row="0"
+                       Grid.Column="2"/>
+                <Label Text="28"
+                       Style="{StaticResource labelBlackText}"
+                       Grid.Row="1"
+                       Grid.Column="0"/>
+                <Label Text="73"
+                       Style="{StaticResource labelBlackText}"
+                       Grid.Row="1"
+                       Grid.Column="1"/>
+                <Label Text="18"
+                       Style="{StaticResource labelBlackText}"
+                       Grid.Row="1"
+                       Grid.Column="2"/>
+            </Grid>
+            <StackLayout VerticalOptions="EndAndExpand" >
+                <Label Text="Complete Profile"
+                   TextColor="Black"
+                   HorizontalOptions="StartAndExpand"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   Margin="20"/>
+                <StackLayout Orientation="Horizontal"
+                             Spacing="10">
+
+                    <Border Stroke="#9DD6F1"
+                        BackgroundColor="#9DD6F1"
+                        Style="{StaticResource borderStyle}">
+                        <StackLayout>
+                            <Border Style="{StaticResource imageBorderStyle}">
+                                <Image Source="education"
+                                   Style="{StaticResource imageStyle}"/>
+                            </Border>
+                            <Label Text="Education"
+                                   Margin="0,10,0,0"
+                                   Style="{StaticResource labelTitleStyle}"/>
+                            <Label Text="02 Steps"
+                                    Margin="0,10,0,0"
+                                   Style="{StaticResource labelStepsStyle}"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Style="{StaticResource labelLeftStyle}"/>
+                                <Image Style="{StaticResource imageRightArrowStyle}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Border>
+
+                    <Border Stroke="#FEC87B"
+                        BackgroundColor="#FEC87B"
+                        Style="{StaticResource borderStyle}">
+                        <StackLayout>
+                            <Border Style="{StaticResource imageBorderStyle}">
+                                <Image Source="professional"
+                                   Style="{StaticResource imageStyle}"/>
+                            </Border>
+                            <Label Text="Professional"
+                                    Margin="0,10,0,0"
+                                   Style="{StaticResource labelTitleStyle}"/>
+                            <Label Text="04 Steps"
+                                    Margin="0,10,0,0"
+                                    Style="{StaticResource labelStepsStyle}"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Style="{StaticResource labelLeftStyle}"/>
+                                <Image Style="{StaticResource imageRightArrowStyle}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Border>
+                </StackLayout>
+            </StackLayout>
+            <Label Text="Buy Pro $23.49"
+                   HorizontalOptions="FillAndExpand"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   Margin="0,40,0,30"
+                   VerticalOptions="End"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

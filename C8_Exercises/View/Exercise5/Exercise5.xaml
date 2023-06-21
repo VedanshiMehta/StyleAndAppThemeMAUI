@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C8_Exercises.View.Exercise5.Exercise5"
+             Shell.NavBarHasShadow="False">
+    <ContentPage.Resources>
+        <Style x:Key="backgroundStacklayoutStyle" TargetType="StackLayout">
+            <Setter Property="BackgroundColor"
+                    Value="{AppThemeBinding Dark= Black,Light= #FEFEFF}"/>
+            <Setter Property="VerticalOptions"
+                    Value="FillAndExpand"/>
+            <Setter Property="HorizontalOptions"
+                    Value="FillAndExpand"/>
+        </Style>
+        <Style x:Key="borderColorStyle" TargetType="Border">
+            <Setter Property="Stroke"
+                    Value="{AppThemeBinding Dark= Black,Light=#FEFEFF}"/>
+            <Setter Property="BackgroundColor"
+                    Value="{AppThemeBinding Dark= #3B3F3E,Light= #E2E1E9}"/>
+            <Setter Property="StrokeShape"
+                    Value="RoundRectangle 30,30,0,0"/>
+            <Setter Property="Padding"
+                    Value="20,20,20,10"/>
+        </Style>
+        <Style x:Key="labelUserNameStyle" TargetType="Label">
+            <Setter Property="FontAttributes"
+                        Value="Bold"/>
+            <Setter Property="FontSize"
+                        Value="24"/>
+            <Setter Property="HorizontalOptions"
+                    Value="FillAndExpand"/>
+            <Setter Property="TextColor"
+                        Value="{AppThemeBinding Dark= White, Light=Black}"/>
+        </Style>
+        <Style x:Key="borderLineStyle" TargetType="Border">
+            <Setter Property="HorizontalOptions"
+                    Value="FillAndExpand"/>
+            <Setter Property="HeightRequest"
+                    Value="1"/>
+            <Setter Property="Stroke"
+                    Value="Gray"/>
+            <Setter Property="BackgroundColor"
+                    Value="Gray"/>
+
+        </Style>
+        <Style x:Key="borderUseImageStyle" TargetType="Border">
+
+            <Setter Property="Stroke"
+                        Value="{AppThemeBinding Dark=Black,Light= #E2E1E9}"/>
+            <Setter Property="BackgroundColor"
+                    Value="{AppThemeBinding Dark=#3B3E3D ,Light= #E2E1E9}"/>
+            <Setter Property="HeightRequest"
+                        Value="30"/>
+            <Setter Property="WidthRequest"
+                        Value="30"/>
+            <Setter Property="HorizontalOptions"
+                        Value="Start"/>
+            <Setter Property="StrokeShape"
+                        Value="RoundRectangle 15"/>
+        </Style>
+        <Style x:Key="labelExercise5Style" TargetType="Label">
+            <Setter Property="FontSize"
+                    Value="14"/>
+            <Setter Property="FontAttributes"
+                    Value="Bold"/>
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Dark=Gray,Light=Black}"/>
+            <Setter Property="VerticalOptions"
+                    Value="StartAndExpand"/>
+            <Setter Property="HorizontalOptions"
+                    Value="FillAndExpand"/>
+            
+        </Style>
+        <Style x:Key="imageIconStyle" TargetType="Image">
+            <Setter Property="HeightRequest"
+                    Value="20"/>
+            <Setter Property="WidthRequest"
+                    Value="20"/>
+            <Setter Property="HorizontalOptions"
+                    Value="Start"/>
+            <Setter Property="VerticalOptions"
+                    Value="StartAndExpand"/>
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Spacing="-20">
+            <StackLayout>
+                <Image Source="gokuimage"
+                       HeightRequest="250"
+                       Aspect="AspectFill"/>
+            </StackLayout>
+            <StackLayout Style="{StaticResource backgroundStacklayoutStyle}" >
+                <StackLayout Padding="20">
+                    <Label Text="Son Gokū Kakarotto"
+                           Style="{StaticResource labelUserNameStyle}"/>
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="0,5,0,0">
+                        <Label Text="October 12, 19:30 - 21:00"
+                               TextColor="#FD0047"
+                               FontSize="18"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Center"/>
+
+                        <Image Source="downarrow"
+                               HorizontalOptions="End"/>
+
+                    </StackLayout>
+
+                </StackLayout>
+                <Border Style="{StaticResource borderLineStyle}"/>
+                <StackLayout Orientation="Horizontal"
+                             Spacing="3"
+                             Padding="20">
+                    <Border Style="{StaticResource borderUseImageStyle}">
+                        <Image Source="user2"
+                               Aspect="AspectFill"/>
+                    </Border>
+                    <Border Style="{StaticResource borderUseImageStyle}">
+                        <Image Source="user3"
+                               Aspect="AspectFill"/>
+                    </Border>
+                    <Border Style="{StaticResource borderUseImageStyle}">
+                        <Image Source="user4"
+                               Aspect="AspectFill"/>
+                    </Border>
+                    <Border Style="{StaticResource borderUseImageStyle}">
+                        <Label Text="+3"
+                               FontSize="12"
+                               TextColor="{AppThemeBinding Dark= White, Light= Black}"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </Border>
+                </StackLayout>
+                <StackLayout Padding="20,10,20,10"
+                             Spacing="20">
+                    <StackLayout Orientation="Horizontal"
+                                 Spacing="10">
+                        <Image Source="tag"
+                           Style="{StaticResource imageIconStyle}"
+                           />
+                        <Label Text="$98 - $165"
+                           Style="{StaticResource labelExercise5Style}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal"
+                                 Spacing="10">
+                    <Image Source="receipt"
+                           Style="{StaticResource imageIconStyle}"
+                           />
+                        <Label Text="Son Gokū Kakarotto,is a Saiyan raised on Earth and the overall main protagonist of the Dragon Ball series."
+                               LineBreakMode="WordWrap"
+                               MaxLines="3"
+                               HeightRequest="55"
+                           Style="{StaticResource labelExercise5Style}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal"
+                                 Spacing="10">
+                    <Image Source="pin"
+                           Style="{StaticResource imageIconStyle}"
+                           />
+                    
+                    <Label Text="Mudan Banquate Hall,151 Noe St, Sans Francisco,CA 94114"
+                          
+                           Style="{StaticResource labelExercise5Style}"
+                           VerticalTextAlignment="Center"/>
+
+                        <Border Stroke="{AppThemeBinding Dark=Black, Light=#FEFEFF}"
+                            StrokeShape="RoundRectangle 30"
+                            HeightRequest="60"
+                            WidthRequest="80"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center">
+                        <Image Source="map"
+                               Aspect="AspectFill"/>
+                    </Border>
+                    </StackLayout>
+                </StackLayout>
+                <Border Style="{StaticResource borderLineStyle}"/>
+                <FlexLayout Direction="Row"
+                            JustifyContent="SpaceBetween"
+                             Margin="20">
+                    <HorizontalStackLayout Spacing="5">
+                        <Image Source="like"
+                           Style="{StaticResource imageIconStyle}"
+                           />
+                        <Label Text="26"
+                           Style="{StaticResource labelExercise5Style}"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Image Source="download"
+                           Style="{StaticResource imageIconStyle}"
+                           />
+                        <Label Text="5K"
+                           Style="{StaticResource labelExercise5Style}"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Image Source="upload"
+                           Style="{StaticResource imageIconStyle}"
+                           />
+                        <Label Text="89K"
+                           Style="{StaticResource labelExercise5Style}"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Image Source="facebook"
+                           Style="{StaticResource imageIconStyle}"
+                           />
+                        <Label Text="135"
+                           Style="{StaticResource labelExercise5Style}"/>
+                    </HorizontalStackLayout>
+                </FlexLayout>
+            </StackLayout>
+            <Border Style="{StaticResource borderColorStyle}"
+                    VerticalOptions="End">
+                <StackLayout>
+                    <Button HorizontalOptions="FillAndExpand"
+                            CornerRadius="30"
+                            Text="SHOW ME 67 DEALS"
+                            BackgroundColor="#FD0047"
+                            TextColor="White"/>
+                </StackLayout>
+            </Border>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

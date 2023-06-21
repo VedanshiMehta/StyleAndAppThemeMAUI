@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C8_Exercises.View.Exercise4.Exercise4"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{AppThemeBinding Light=WhiteSmoke,Dark=Black}"
+             xmlns:viewModel="clr-namespace:C8_Exercises.ViewModel"
+             xmlns:templateSelector="clr-namespace:C8_Exercises.Selector">
+    <ContentPage.BindingContext>
+        <viewModel:ChatViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <DataTemplate x:Key="readMessageDataTemplate">
+
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <StackLayout Spacing="10"
+                         Orientation="Horizontal"
+                         Padding="10">
+                    <Border Style="{StaticResource imageBorderUserPhotoStyle}">
+                        <Image Source="{Binding ProfilePhoto}"
+                               Aspect="AspectFill"/>
+                    </Border>
+                    <StackLayout VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Name}"
+                                   Style="{StaticResource labelUserNameStyle}"
+                                   HorizontalOptions="FillAndExpand"/>
+
+                            <Label Text="{Binding Time}"
+                                   FontSize="18"
+                                   HorizontalOptions="End"/>
+                        </StackLayout>
+
+                        <Label Text="{Binding MessageSent}"
+                               Style="{StaticResource labelMesageSentStyle}"/>
+
+                    </StackLayout>
+
+
+                </StackLayout>
+            </StackLayout>
+
+        </DataTemplate>
+        <DataTemplate x:Key="unreadMessageDataTemplate">
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand"
+                         Spacing="10"
+                         Padding="10"
+                         Orientation="Horizontal">
+                    <Border Style="{StaticResource imageBorderUserPhotoStyle}">
+                        <Image Source="{Binding ProfilePhoto}"
+                               Aspect="AspectFill"/>
+                    </Border>
+                    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        Spacing="5">
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="{Binding Name}"
+                                   Style="{StaticResource labelUserNameStyle}"
+                                   VerticalOptions="Center"/>
+
+                            <Border BackgroundColor="LightGreen"
+                                    Stroke="LightGreen"
+                                    StrokeShape="RoundRectangle 50"
+                                    HeightRequest="15"
+                                    WidthRequest="15"/>
+                        </HorizontalStackLayout>
+
+                        <Label Text="{Binding MessageSent}"
+                               Style="{StaticResource labelMesageSentStyle}"
+                               FontFamily="Mistral"/>
+
+                    </VerticalStackLayout>
+                    <VerticalStackLayout HorizontalOptions="End"
+                                     VerticalOptions="CenterAndExpand"
+                                     Spacing="5">
+
+                        <Border BackgroundColor="{AppThemeBinding Dark=White, Light=#5F74C3 }"
+                                Stroke="{AppThemeBinding Dark=White, Light=#5F74C3 }"
+                                StrokeShape="RoundRectangle 30"
+                                Padding="10,5,10,5"
+                                HorizontalOptions="End">
+                            <StackLayout>
+                                <Label x:Name="totalChatCount"
+                                   FontSize="12"
+                                   TextColor="{AppThemeBinding Dark=Black, Light= White }"
+                                   FontAttributes="Bold"
+                                   Text="{Binding UnreadMessage}"
+                                   VerticalOptions="Center"/>
+                            </StackLayout>
+                        </Border>
+                    </VerticalStackLayout>
+                </StackLayout>
+            </StackLayout>
+        </DataTemplate>
+        <templateSelector:MessageSelector x:Key="messageSelector"
+                                          UnreadMessage="{StaticResource unreadMessageDataTemplate}"
+                                          ReadMessage="{StaticResource readMessageDataTemplate}"/>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Padding="10">
+            <Label Text="Let's Chat"
+               Style="{StaticResource labelBigSize}"/>
+            <Border Style="{StaticResource borderBackgroundStyle}"
+                 Margin="0,5,0,0">
+                <Entry Style="{StaticResource entrySmallColorStyle}"/>
+            </Border>
+            <Label Text="Friend's Stories"
+                   Style="{StaticResource labelSmallAppThemeingStyle}"
+                   Margin="0,30,0,0"/>
+            <CollectionView Margin="0,5,0,0"
+                            ItemsSource="{Binding ImageSourceUserPhoto}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal"
+                                       ItemSpacing="3"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Border Style="{StaticResource imageBorderUserPhotoStyle}">
+                                <Image Source="{Binding .}"
+                                       Aspect="AspectFill"/>
+                            </Border>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label Text="Recent Chats"
+                   Style="{StaticResource labelSmallAppThemeingStyle}"
+                   Margin="0,30,0,0"/>
+            <CollectionView ItemsSource="{Binding ShowMessage}"
+                        ItemTemplate="{StaticResource messageSelector}"
+                        SelectionMode="Single"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

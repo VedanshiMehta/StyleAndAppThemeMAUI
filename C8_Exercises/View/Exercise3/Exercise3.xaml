@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C8_Exercises.View.Exercise3.Exercise3"
+             BackgroundColor="Black"
+             Padding="10">
+    <ScrollView>
+        <FlexLayout Direction="Column"
+                    
+                    BackgroundColor="Black">
+        <FlexLayout FlexLayout.Grow="1"
+                    Direction="Column"
+                    AlignItems="Start">
+            
+            <Label Text="Forgot your password?"
+                   Style="{StaticResource labelBigWhiteColorStyle}"
+                   Margin="0,40,0,0"/>
+            <Label Text="Please,enter your e-mail address below to receive your user and a new password."
+                   Style="{StaticResource labelSmallWhiteColorStyle}"/>
+            <Label Text="E-mail address*"
+                   Style="{StaticResource labelSmallBlueColorStyle}"
+                   Margin="0,30,0,0"/>
+            <Border Style="{StaticResource borderBlackBackgroundStyle}"
+                    FlexLayout.AlignSelf="Stretch"
+                    Margin="0,5,0,0">
+                <Entry Placeholder="Enter your e-mail address"
+                       Style="{StaticResource entrySmallWhiteColorStyle}"
+                       x:Name="entryEmailAddress"/>
+            </Border>
+        </FlexLayout>
+            <Button FlexLayout.AlignSelf="Stretch"
+                    Text="Reset password"
+                    Style="{StaticResource buttonBlueStyle}"
+                    Clicked="Button_Clicked"/>
+        </FlexLayout>
+    </ScrollView>
+</ContentPage>

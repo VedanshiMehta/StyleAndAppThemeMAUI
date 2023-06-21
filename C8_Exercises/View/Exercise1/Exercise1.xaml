@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C8_Exercises.View.Exercise1"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <Style x:Key="buttonStyle"
+               TargetType="Button">
+            <Setter Property="HorizontalOptions"
+                    Value="FillAndExpand"/>
+            <Setter Property="Padding"
+                    Value="20"/>
+            <Setter Property="FontAttributes"
+                    Value="Bold"/>
+            <Setter Property="FontSize"
+                    Value="14"/>
+            <Setter Property="Margin"
+                    Value="0,15,0,0"/>
+        </Style>
+        <Style x:Key="labelStyle"
+               TargetType="Label">
+            <Setter Property="FontAttributes"
+                    Value="Bold"/>
+            <Setter Property="FontSize"
+                    Value="16"/>
+            <Setter Property="Margin"
+                    Value="0,15,0,0"/>
+
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Padding="10">
+            <StackLayout.Resources>
+                <Style x:Key="greenButtonBackGround"
+                       TargetType="Button"
+                       BasedOn="{StaticResource buttonStyle}">
+                    <Setter Property="BackgroundColor"
+                            Value="LightGreen"/>
+                </Style>
+                <Style x:Key="blackButtonBackGround"
+                       TargetType="Button"
+                       BasedOn="{StaticResource buttonStyle}">
+                    <Setter Property="BackgroundColor"
+                            Value="Black"/>
+                </Style>
+                <Style x:Key="lightBlueButtonBackGround"
+                       TargetType="Button"
+                       BasedOn="{StaticResource buttonStyle}">
+                    <Setter Property="BackgroundColor"
+                            Value="#5686E0"/>
+                </Style>
+                <Style x:Key="blueButtonBackGround"
+                       TargetType="Button"
+                       BasedOn="{StaticResource buttonStyle}">
+                    <Setter Property="BackgroundColor"
+                            Value="#41598F"/>
+                </Style>
+                <Style x:Key="blackTextColor"
+                       TargetType="Label"
+                       BasedOn="{StaticResource labelStyle}">
+                    <Setter Property="TextColor"
+                            Value="Black"/>
+                </Style>
+                <Style x:Key="greenTextColor"
+                       TargetType="Label"
+                       BasedOn="{StaticResource labelStyle}">
+                    <Setter Property="TextColor"
+                            Value="Green"/>
+                </Style>
+            </StackLayout.Resources>
+            <Border StrokeShape="RoundRectangle 25"
+                BackgroundColor="#FAF2E6"
+                Stroke="#FAF2E6"
+                Padding="25,10,25,10"
+                HorizontalOptions="End">
+                <Label Text="Skip"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"/>
+            </Border>
+            <Border BackgroundColor="#EEF6F8"
+                Stroke="#EEF6F8"
+                StrokeShape="RoundRectangle 90"
+                HeightRequest="200"
+                WidthRequest="200"
+                Padding="20">
+                <Image Source="dotnet_bot"/>
+
+            </Border>
+            <Button Style="{StaticResource greenButtonBackGround}"
+                    Text="Continue with Email"/>
+            <Button Style="{StaticResource blackButtonBackGround}"
+                    Text="Continue with Apple"
+                    ImageSource="appleicon"
+                    ContentLayout="Left"/>
+            <Button Style="{StaticResource lightBlueButtonBackGround}"
+                    Text="Continue with Google"
+                    ImageSource="googleicon"
+                    ContentLayout="Left"/>
+            <Button Style="{StaticResource blueButtonBackGround}"
+                    Text="Continue facebook"
+                    ImageSource="fbicon"
+                    ContentLayout="Left"/>
+            <HorizontalStackLayout Spacing="3"
+                                   HorizontalOptions="CenterAndExpand">
+                <Label Text="Don't have an account?"
+                       Style="{StaticResource blackTextColor}"/>
+                <Label Text="Sign Up"
+                       Style="{StaticResource greenTextColor}"/>
+            </HorizontalStackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
